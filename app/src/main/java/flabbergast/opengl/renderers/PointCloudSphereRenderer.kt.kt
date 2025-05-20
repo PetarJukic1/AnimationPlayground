@@ -266,10 +266,10 @@ class PointCloudSphereRenderer(
 
     private fun freezeSomeLivePoints() {
         val eligible = pointList.filter { !it.frozen && !it.hasEjected }
-
+        val freezeHalfAmount = (eligible.size / 2.0).roundToInt()
         if (eligible.isEmpty()) return
 
-        val freezeCount = (pointCount / 8.0).roundToInt().coerceAtMost(eligible.size)
+        val freezeCount = if(freezeHalfAmount < pointCount / 8) eligible.size else freezeHalfAmount
 
         eligible.shuffled().take(freezeCount).forEach { point ->
             point.hasEjected = true
