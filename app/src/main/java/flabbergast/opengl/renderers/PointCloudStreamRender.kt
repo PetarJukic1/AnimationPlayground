@@ -1,5 +1,6 @@
 package flabbergast.opengl.renderers
 
+import android.content.Context
 import android.opengl.GLES30
 import android.opengl.GLSurfaceView
 import android.opengl.Matrix
@@ -13,6 +14,7 @@ import kotlin.math.min
 import kotlin.random.Random
 
 class PointCloudStreamRenderer(
+    private val context: Context,
     private val pointCount: Int = 1000
 ) : GLSurfaceView.Renderer {
 

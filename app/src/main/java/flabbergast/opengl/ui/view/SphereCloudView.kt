@@ -36,7 +36,7 @@ fun SphereCloudView(
 
     AndroidView(
         factory = { context ->
-            SurfaceView(context, PointCloudSphereRenderer(pointCount))
+            SurfaceView(context, PointCloudSphereRenderer(context, pointCount))
         },
         modifier = modifier
             .fillMaxSize()
