@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                     when(state){
                         State.SPHERE -> SphereCloudView(
                             modifier = Modifier.fillMaxWidth().aspectRatio(1.0f).align(Alignment.Center),
-                            pointCount = 4000
+                            pointCount = 6000
                         )
                         State.STREAM -> StreamCloudView(
                             modifier = Modifier.align(Alignment.Center),
